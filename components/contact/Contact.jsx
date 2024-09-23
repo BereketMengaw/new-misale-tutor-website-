@@ -14,7 +14,8 @@ function Contact() {
           Contact Us
         </h1>
         <p className="text-base md:text-lg mb-6 md:mb-8 text-black">
-          Have a question or need more information? Don't hesitate to reach out.
+          Have a question or need more information? Don&apos;t hesitate to reach
+          out.
         </p>
 
         <div className="flex flex-col space-y-4">

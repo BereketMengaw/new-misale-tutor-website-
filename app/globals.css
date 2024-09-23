@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+/*for the toggle bar slide down */
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/*bg for result page*/
+.result {
+  background-image: url("/result/bg.jpg");
+}
+
+/*bg for the contact page*/
+.contact {
+  background-image: url("/result/contactTwo.png");
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover; /* Make background image cover the entire container */
+}
+
+.contact > div {
+  backdrop-filter: blur(4px); /* Apply blur effect */
+  -webkit-backdrop-filter: blur(4px); /* Support for Safari */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Optional: add some transparency */
+}
+
+/*for steps section*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-in-out forwards;
+}
+
+/*for the forms page styling */
+
+.red {
+  background-color: red;
+}

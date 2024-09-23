@@ -81,8 +81,8 @@ const AboutUs = () => {
           <h2 style={titleStyle}>Our Mission</h2>
           <p style={paragraphStyle}>
             We strive to provide the best tutoring services tailored to each
-            student's needs. Our goal is to foster a love for learning and to
-            help students achieve their academic goals.
+            student&apos;s needs. Our goal is to foster a love for learning and
+            to help students achieve their academic goals.
           </p>
           <h2 style={titleStyle}>Our Vision</h2>
           <p style={paragraphStyle}>

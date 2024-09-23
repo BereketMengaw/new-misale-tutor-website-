@@ -9,7 +9,8 @@ function Contact() {
       <div style={styles.card}>
         <h1 style={styles.title}>Contact Us</h1>
         <p style={styles.description}>
-          Have a question or need more information? Don't hesitate to reach out.
+          Have a question or need more information? Don&apos;t hesitate to reach
+          out.
         </p>
 
         <div style={styles.contactList}>

@@ -45,15 +45,15 @@ function ComingSoon() {
               src="/coming/playstore.png"
               alt="Play Store icon"
               className="h-4"
-              width={500}
-              height={400}
+              width={10}
+              height={40}
             />
             <h4 className="pl-2 text-lg font-semibold">Play Store</h4>
           </div>
           <div className="flex items-center">
             <Image
-              width={500}
-              height={400}
+              width={15}
+              height={70}
               src="/coming/one.png"
               alt="App Store icon"
               className="h-4"

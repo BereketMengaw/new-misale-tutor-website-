@@ -14,7 +14,7 @@ const TutorRequestForm = () => {
               className="block text-lg font-semibold text-gray-700"
               htmlFor="parentName"
             >
-              Parent's Name
+              Parent&apos;s Name
             </label>
             <input
               type="text"
@@ -29,7 +29,7 @@ const TutorRequestForm = () => {
               className="block text-lg font-semibold text-gray-700"
               htmlFor="childName"
             >
-              Child's Name
+              Child&apos;s Name
             </label>
             <input
               type="text"

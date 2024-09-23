@@ -64,10 +64,9 @@ const AboutUs = () => {
   };
 
   const teamMembers = [
-    { name: "John Doe", role: "CEO" },
-    { name: "Jane Smith", role: "CTO" },
-    { name: "Alice Johnson", role: "Project Manager" },
-    { name: "Bob Brown", role: "Lead Developer" },
+    { name: "Bereket Mengaw", role: "Main Coordinator" },
+    { name: "Taddese Mulu(MSC)", role: "Academic Strategist" },
+    { name: "Misrak Habtamu", role: "HR Officer" },
   ];
 
   return (

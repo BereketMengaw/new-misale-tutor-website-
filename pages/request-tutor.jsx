@@ -50,7 +50,7 @@ const ContactForm = () => {
         <h2 className="form-title">Tutor Request Form</h2>
 
         <div className="form-group">
-          <label>Parent's Name:</label>
+          <label>Parent&apos;s Name:</label>
           <input
             type="text"
             value={parentName}
@@ -61,7 +61,7 @@ const ContactForm = () => {
         </div>
 
         <div className="form-group">
-          <label>Student's Name:</label>
+          <label>Student&apos;s Name:</label>
           <input
             type="text"
             value={studentName}
@@ -87,7 +87,7 @@ const ContactForm = () => {
           <input
             type="text"
             value={school}
-            onChange={(e) => setSchool(e.target.value)} // Use setSchool
+            onChange={(e) => setSchool(e.target.value)}
             required
             className="form-input"
           />

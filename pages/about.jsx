@@ -1,4 +1,6 @@
 import Footer from "@/components/footer/Footer";
+import FooterOther from "@/components/footerOther/footetother";
+import NavbarOther from "@/components/navbarother/Navbarother";
 import Navbar from "@/components/navbarother/Navbarother";
 import React from "react";
 
@@ -71,7 +73,7 @@ const AboutUs = () => {
 
   return (
     <>
-      <Navbar />
+      <NavbarOther />
       <div style={pageStyle}>
         <header style={headerStyle}>
           <h1>About Us</h1>
@@ -103,6 +105,7 @@ const AboutUs = () => {
           </div>
         </section>
       </div>
+      <FooterOther />
     </>
   );
 };

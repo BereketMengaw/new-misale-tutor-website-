@@ -1,3 +1,4 @@
+import FooterOther from "@/components/footerOther/footetother";
 import Navbar from "@/components/navbar/Navbar";
 import Navbarother from "@/components/navbarother/Navbarother";
 import React from "react";
@@ -35,6 +36,7 @@ const Services = () => {
           ))}
         </div>
       </div>
+      <FooterOther />
     </>
   );
 };

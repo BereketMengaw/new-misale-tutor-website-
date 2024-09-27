@@ -1,3 +1,6 @@
+import FooterOther from "@/components/footerOther/footetother";
+import Navbar from "@/components/navbar/Navbar";
+import Navbarother from "@/components/navbarother/Navbarother";
 import { useState } from "react";
 
 const RequestTutor = () => {
@@ -57,92 +60,96 @@ const RequestTutor = () => {
   };
 
   return (
-    <div
-      style={{
-        maxWidth: "600px",
-        margin: "auto",
-        padding: "20px",
-        fontFamily: "'Arial', sans-serif",
-        textAlign: "center",
-        border: "1px solid #ccc",
-        borderRadius: "10px",
-        backgroundColor: "#f9f9f9",
-      }}
-    >
-      <h1 style={{ color: "#333", fontSize: "28px", marginBottom: "20px" }}>
-        Your Personalized Tutoring Journey Starts Here
-      </h1>
-      <p style={{ color: "#555", marginBottom: "30px" }}>
-        Get your child the support they need! Fill in the details below, and
-        we’ll pair you with the best tutors.
-      </p>
-      <form
-        onSubmit={handleSubmit}
+    <>
+      <Navbarother />
+      <div
         style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          maxWidth: "600px",
+          margin: "auto",
+          padding: "20px",
+          fontFamily: "'Arial', sans-serif",
+          textAlign: "center",
+          border: "1px solid #ccc",
+          borderRadius: "10px",
+          backgroundColor: "#f9f9f9",
         }}
       >
-        <input
-          type="text"
-          name="parentsName"
-          placeholder="Parent's Name"
-          value={formData.parentsName}
-          onChange={handleChange}
-          required
-          style={inputStyle}
-        />
-        <input
-          type="text"
-          name="studentName"
-          placeholder="Student's Name"
-          value={formData.studentName}
-          onChange={handleChange}
-          required
-          style={inputStyle}
-        />
-        <input
-          type="text"
-          name="gradeLevel"
-          placeholder="Grade Level"
-          value={formData.gradeLevel}
-          onChange={handleChange}
-          required
-          style={inputStyle}
-        />
-        <input
-          type="text"
-          name="school"
-          placeholder="School Name"
-          value={formData.school}
-          onChange={handleChange}
-          required
-          style={inputStyle}
-        />
-        <input
-          type="text"
-          name="location"
-          placeholder="Location"
-          value={formData.location}
-          onChange={handleChange}
-          required
-          style={inputStyle}
-        />
-        <input
-          type="text"
-          name="how"
-          placeholder="How many days a week do you want tutoring?"
-          value={formData.how}
-          onChange={handleChange}
-          required
-          style={inputStyle}
-        />
-        <button type="submit" style={buttonStyle}>
-          Submit
-        </button>
-      </form>
-    </div>
+        <h1 style={{ color: "#333", fontSize: "28px", marginBottom: "20px" }}>
+          Your Personalized Tutoring Journey Starts Here
+        </h1>
+        <p style={{ color: "#555", marginBottom: "30px" }}>
+          Get your child the support they need! Fill in the details below, and
+          we’ll pair you with the best tutors.
+        </p>
+        <form
+          onSubmit={handleSubmit}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <input
+            type="text"
+            name="parentsName"
+            placeholder="Parent's Name"
+            value={formData.parentsName}
+            onChange={handleChange}
+            required
+            style={inputStyle}
+          />
+          <input
+            type="text"
+            name="studentName"
+            placeholder="Student's Name"
+            value={formData.studentName}
+            onChange={handleChange}
+            required
+            style={inputStyle}
+          />
+          <input
+            type="text"
+            name="gradeLevel"
+            placeholder="Grade Level"
+            value={formData.gradeLevel}
+            onChange={handleChange}
+            required
+            style={inputStyle}
+          />
+          <input
+            type="text"
+            name="school"
+            placeholder="School Name"
+            value={formData.school}
+            onChange={handleChange}
+            required
+            style={inputStyle}
+          />
+          <input
+            type="text"
+            name="location"
+            placeholder="Location"
+            value={formData.location}
+            onChange={handleChange}
+            required
+            style={inputStyle}
+          />
+          <input
+            type="text"
+            name="how"
+            placeholder="How many days a week do you want tutoring?"
+            value={formData.how}
+            onChange={handleChange}
+            required
+            style={inputStyle}
+          />
+          <button type="submit" style={buttonStyle}>
+            Submit
+          </button>
+        </form>
+      </div>
+      <FooterOther />
+    </>
   );
 };
 const inputStyle = {

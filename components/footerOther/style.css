@@ -1,0 +1,26 @@
+/* Footer Styles */
+.footer {
+  background-color: #4a5568; /* Dark gray background */
+  color: white; /* White text color */
+  padding: 24px 40px; /* Vertical and horizontal padding */
+  text-align: center; /* Center text */
+}
+
+.footer-title {
+  margin-bottom: 28px; /* Space below title */
+}
+
+.social-icons {
+  display: flex; /* Flexbox for icons */
+  justify-content: center; /* Center icons */
+}
+
+.social-icon {
+  width: 30px; /* Width of icons */
+  height: 30px; /* Height of icons */
+  padding: 0 12px; /* Padding around icons */
+}
+
+.footer-text {
+  margin-top: 16px; /* Space above footer text */
+}

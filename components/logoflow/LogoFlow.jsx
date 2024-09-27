@@ -18,7 +18,12 @@ const logos = [
   "/schoolsLogo/lebawi.jpg",
   "/schoolsLogo/sot.jpg",
   "/schoolsLogo/zagol.jpg",
-
+  "/schoolsLogo/andinet.jpg",
+  "/schoolsLogo/cruise.jpg",
+  "/schoolsLogo/hillside.jpg",
+  "/schoolsLogo/lebawi.jpg",
+  "/schoolsLogo/sot.jpg",
+  "/schoolsLogo/zagol.jpg",
   // Add more logo paths as needed
 ];
 

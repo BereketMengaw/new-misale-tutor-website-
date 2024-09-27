@@ -1,7 +1,9 @@
-import FooterOther from "@/components/footerOther/footetother";
-import Navbar from "@/components/navbar/Navbar";
-import Navbarother from "@/components/navbarother/Navbarother";
+import Footer from "@/components/footer/Footer";
+import Navbar from "@/components/navbars/Navbars";
+
 import React from "react";
+
+import "./styles.css";
 
 const services = [
   {
@@ -24,57 +26,39 @@ const services = [
 const Services = () => {
   return (
     <>
-      <Navbarother />
-      <div style={styles.container}>
-        <h2 style={styles.title}>Our Services</h2>
-        <div style={styles.cardContainer}>
+      <Navbar />
+
+      <div className="max-w-6xl mt-20 mx-auto mb-28 p-5 text-center">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-extrabold text-blue-700 mb-4">
+            Explore Our Services
+          </h2>
+          <p className="text-lg text-gray-600 max-w-md mx-auto">
+            Discover the tailored tutoring services we offer to help students
+            succeed in their academic journey.
+          </p>
+          <div className="mt-5">
+            <hr className="border-t-2 border-blue-500 w-1/4 mx-auto" />
+          </div>
+        </div>
+
+        <div className="flex flex-wrap justify-around">
           {services.map((service, index) => (
-            <div key={index} style={styles.card}>
-              <h3 style={styles.cardTitle}>{service.title}</h3>
-              <p style={styles.description}>{service.description}</p>
+            <div
+              key={index}
+              className="bg-white border border-teal-600 rounded-lg w-72 m-2 p-5 shadow-lg transition-transform duration-300 hover:shadow-2xl hover:scale-105 transform-gpu"
+            >
+              <h3 className="text-2xl mb-3 text-teal-600 font-semibold">
+                {service.title}
+              </h3>
+              <p className="text-base text-gray-700">{service.description}</p>
             </div>
           ))}
         </div>
       </div>
-      <FooterOther />
+      <Footer />
     </>
   );
-};
-
-const styles = {
-  container: {
-    maxWidth: "1200px",
-    margin: "0 auto",
-    padding: "20px",
-    textAlign: "center",
-  },
-  title: {
-    marginBottom: "30px",
-    fontSize: "2rem",
-  },
-  cardContainer: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "space-around",
-  },
-  card: {
-    background: "#e0f7fa", // Light blue background
-    border: "1px solid #00796b", // Darker blue border
-    borderRadius: "8px",
-    width: "300px",
-    margin: "10px",
-    padding: "20px",
-    boxShadow: "0 2px 10px rgba(0, 0, 0, 0.1)",
-    transition: "transform 0.2s",
-  },
-  cardTitle: {
-    fontSize: "1.5rem",
-    margin: "10px 0",
-  },
-  description: {
-    fontSize: "1rem",
-    color: "#555",
-  },
 };
 
 export default Services;

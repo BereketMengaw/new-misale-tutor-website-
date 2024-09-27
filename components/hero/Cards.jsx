@@ -3,37 +3,56 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 const Card = () => {
-  const images = [
-    "/hero/graduate.png",
-    "/hero/meeting.jpg",
-    "/hero/schoolOne.png",
+  const cards = [
+    {
+      image: "/hero/meeting.jpg",
+      title: "Team Meeting",
+      description: "Collaborate with your team effectively.",
+    },
+    {
+      image: "/hero/cardone.png",
+      title: "Personalised guidance ",
+      description: "Providing best service as a family",
+    },
+    {
+      image: "/hero/cardtwo.png",
+      title: "Become better always",
+      description: "We build learning charactor in childrens",
+    },
+    {
+      image: "/hero/cardthree.png",
+      title: "Highly technical",
+      description: "We have highly skilled tutors with great achivments",
+    },
   ];
-  const title = "Dynamic Card Title";
-  const description = "This is a description that changes .";
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 3000); // Change image every 3 seconds
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % cards.length);
+    }, 3000); // Change card every 3 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
-  }, [images.length]);
+  }, [cards.length]);
 
   return (
-    <div className="  lg:mt-32 lg:mr-40 text-white flex flex-col items-center">
+    <div className="lg:mt-32 lg:mr-40 text-white flex flex-col items-center">
       <div className="overflow-hidden rounded-2xl shadow-lg">
         <Image
-          src={images[currentIndex]}
-          alt={title}
+          src={cards[currentIndex].image}
+          alt={cards[currentIndex].title}
           height={400}
           width={300}
           className="md:h-96 md:w-96 w-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
         />
       </div>
-      <h2 className="mt-4 text-xl font-semibold text-center">{title}</h2>
-      <p className="text-gray-300 text-center">{description}</p>
+      <h2 className="mt-4 text-xl font-semibold text-center">
+        {cards[currentIndex].title}
+      </h2>
+      <p className="text-gray-300 text-center">
+        {cards[currentIndex].description}
+      </p>
     </div>
   );
 };

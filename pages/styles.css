@@ -1,0 +1,13 @@
+/* style.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Navbar styles */
+
+.back {
+  background-image: url("../public/result/bg.jpg"); /* Replace with your image path */
+  background-size: cover; /* Scales the image to cover the entire container */
+  background-position: center; /* Centers the image in the container */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  height: 100vh; /* Sets the height of the element */
+}

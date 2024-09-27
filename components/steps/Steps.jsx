@@ -6,7 +6,7 @@ import Image from "next/image";
 const Steps = () => {
   return (
     <>
-      <h1 className="text-4xl font-extrabold text-center mt-10 animate-fade-in bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent ">
+      <h1 className="text-4xl  justify-center  font-extrabold text-center mt-10 animate-fade-in bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent relative">
         Simple Steps to Request a <br /> Tutor
       </h1>
 

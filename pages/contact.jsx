@@ -1,14 +1,17 @@
-import Navbarother from "@/components/navbarother/Navbarother";
-import Contactother from "@/components/contactother/Contactother";
 import React from "react";
-import FooterOther from "@/components/footerOther/footetother";
+
+import Navbar from "@/components/navbars/Navbars";
+import Footer from "@/components/footer/Footer";
+import Contact from "@/components/contact/Contact";
+
+import "./styles.css";
 
 function contact() {
   return (
     <div>
-      <Navbarother />
-      <Contactother />
-      <FooterOther />
+      <Navbar />
+      <Contact />
+      <Footer />
     </div>
   );
 }

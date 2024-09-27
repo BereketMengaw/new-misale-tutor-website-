@@ -21,17 +21,17 @@ function Contact() {
         <div className="flex flex-col space-y-4">
           <ContactItem
             href="mailto:your@email.com"
-            text="Email: your@email.com"
+            text="Email: misaletutors@gmail.com"
           />
           <ContactItem
-            href="tel:+1234567890"
+            href="tel:+251907152943"
             text={
-              <span className="font-bold text-black">Call: +123 456 7890</span>
+              <span className="font-bold text-black">Call: +251907152943 </span>
             }
           />
           <ContactItem
             href="https://www.yourwebsite.com"
-            text="Visit Website: yourwebsite.com"
+            text="Visit Website: misaletutors.com"
           />
         </div>
 

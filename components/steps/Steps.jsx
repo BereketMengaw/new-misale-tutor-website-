@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 const Steps = () => {
   return (
@@ -30,9 +31,11 @@ const RequestStep = () => {
 
   return (
     <div className="relative text-center transition-transform transform hover:scale-105 p-6 border border-blue-300 rounded-lg shadow-lg bg-white h-64 flex flex-col justify-center">
-      <img
+      <Image
         src="/steps/phone-call.svg"
         alt="Step 1"
+        width={300}
+        height={400}
         className="w-20 h-20 mb-5 mx-auto"
       />
       <div className="font-bold text-lg text-blue-700">Step 01: Request</div>
@@ -63,10 +66,12 @@ const RequestStep = () => {
 const ReceiveStep = () => {
   return (
     <div className="text-center transition-transform transform hover:scale-105   p-6 border border-purple-300 rounded-lg shadow-lg bg-white h-64 flex flex-col justify-center">
-      <img
+      <Image
         src="/steps/square.svg"
         alt="Step 2"
         className="w-20 h-20 mb-5 mx-auto "
+        width={300}
+        height={400}
       />
       <div className="font-bold text-lg text-purple-700">Step 02: Receive</div>
       <p className="text-gray-600">
@@ -80,10 +85,12 @@ const ReceiveStep = () => {
 const SelectStep = () => {
   return (
     <div className="text-center transition-transform transform hover:scale-105 p-6 border border-green-300 rounded-lg shadow-lg bg-white h-64 flex flex-col justify-center">
-      <img
+      <Image
         src="/steps/check.svg"
         alt="Step 3"
         className="w-20 h-20 mb-5 mx-auto"
+        width={300}
+        height={400}
       />
       <div className="font-bold text-lg text-green-700">Step 03: Select</div>
       <p className="text-gray-600">

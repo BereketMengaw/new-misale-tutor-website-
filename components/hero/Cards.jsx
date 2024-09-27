@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 
 const Card = () => {
   const images = [
@@ -23,9 +24,11 @@ const Card = () => {
   return (
     <div className="  lg:mt-32 lg:mr-40 text-white flex flex-col items-center">
       <div className="overflow-hidden rounded-2xl shadow-lg">
-        <img
+        <Image
           src={images[currentIndex]}
           alt={title}
+          height={400}
+          width={300}
           className="md:h-96 md:w-96 w-full object-cover transition-transform duration-300 ease-in-out transform hover:scale-105"
         />
       </div>

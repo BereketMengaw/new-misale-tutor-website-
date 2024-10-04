@@ -5,10 +5,9 @@ import Image from "next/image";
 const Card = () => {
   const cards = [
     {
-      image: "/hero/meeting.jpg",
+      image: "/hero/meeting.png",
       title: "Team Meeting",
-      description:
-        "We emphasize team discussions to build a high-achieving environment..",
+      description: " Discussions to build a high-achieving environment..",
     },
     {
       image: "/hero/cardone.png",

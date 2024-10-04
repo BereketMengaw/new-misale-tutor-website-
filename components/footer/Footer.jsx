@@ -16,6 +16,8 @@ const Footer = () => {
             src="/logos/facebook.svg"
             className="w-15 h-7 px-3"
             alt="Facebook"
+            width={50}
+            height={40}
           />
         </Link>
         <Link
@@ -27,6 +29,8 @@ const Footer = () => {
             src="/logos/instagram.png"
             className="w-15 h-7 px-3"
             alt="Instagram"
+            width={50}
+            height={40}
           />
         </Link>
         <Link
@@ -40,6 +44,8 @@ misale-tutors-b66160331
             src="/logos/linkdin.png"
             className="w-15 h-7 px-3"
             alt="LinkedIn"
+            width={50}
+            height={40}
           />
         </Link>
         <Link
@@ -51,6 +57,8 @@ misale-tutors-b66160331
             src="/logos/telegram.svg"
             className="w-15 h-6"
             alt="Telegram"
+            width={50}
+            height={40}
           />
         </Link>
         <Link
@@ -58,7 +66,13 @@ misale-tutors-b66160331
           target="_blank"
           rel="noopener noreferrer"
         >
-          <Image src="/logos/x.png" className="w-15 h-7 px-3" alt="Twitter" />
+          <Image
+            src="/logos/x.png"
+            className="w-15 h-7 px-3"
+            alt="Twitter"
+            width={50}
+            height={40}
+          />
         </Link>
         <Link
           href="https://www.youtube.com/@MISALETUTORS"
@@ -69,6 +83,8 @@ misale-tutors-b66160331
             src="/logos/youtube.svg"
             className="w-15 h-7 px-3"
             alt="YouTube"
+            width={50}
+            height={40}
           />
         </Link>
       </div>

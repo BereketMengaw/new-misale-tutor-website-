@@ -24,7 +24,6 @@ const logos = [
   "/schoolsLogo/lebawi.jpg",
   "/schoolsLogo/sot.jpg",
   "/schoolsLogo/zagol.jpg",
-  // Add more logo paths as needed
 ];
 
 const LogoRiver = () => {
@@ -53,6 +52,8 @@ const LogoRiver = () => {
           <div key={index} className="flex-none">
             <Image
               src={logo}
+              width={40}
+              height={40}
               alt={`Logo ${index + 1}`}
               className="h-10 rounded-3xl opacity-80  hover:scale-110 transition-transform duration-300"
             />

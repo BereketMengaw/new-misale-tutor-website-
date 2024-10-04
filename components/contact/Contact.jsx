@@ -35,11 +35,17 @@ function Contact() {
           />
         </div>
 
-        <div className="flex justify-center space-x-4 mt-6">
-          <SocialMediaLink href="https://www.facebook.com" text="Facebook" />
-          <SocialMediaLink href="https://www.twitter.com" text="Twitter" />
+        <div className="flex  justify-center space-x-4 mt-6">
+          <SocialMediaLink
+            href="https://www.facebook.com/profile.php?id=61565863765699"
+            text="Facebook"
+          />
+          <SocialMediaLink href="https://x.com/MisaleTutors" text="Twitter" />
           <SocialMediaLink href="https://www.instagram.com" text="Instagram" />
-          <SocialMediaLink href="https://www.linkedin.com" text="LinkedIn" />
+          <SocialMediaLink
+            href="www.linkedin.com/in/misale-tutors-undefined-b66160331"
+            text="LinkedIn"
+          />
         </div>
       </div>
     </div>
@@ -57,7 +63,7 @@ const ContactItem = ({ href, text }) => (
 const SocialMediaLink = ({ href, text }) => (
   <Link
     href={href}
-    className="text-white text-lg hover:text-blue-400 transition-colors duration-200"
+    className="text-black text-lg hover:text-blue-400 transition-colors duration-200"
   >
     {text}
   </Link>

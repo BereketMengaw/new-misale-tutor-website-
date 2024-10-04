@@ -31,32 +31,25 @@ function ComingSoon() {
         <p className="text-lg text-gray-500 mb-8">
           Stay tuned for the launch of our new mobile app!
         </p>
-        <Image
-          src="/coming/coming.jpg"
-          alt="Coming Soon"
-          width={500}
-          height={400}
-          className="rounded-lg shadow-lg max-w-md mb-8 animate-bubble-jump h-52 w-32"
-        />
 
         <div className="flex justify-center space-x-8 mb-8">
           <div className="flex items-center">
             <Image
               src="/coming/playstore.png"
               alt="Play Store icon"
-              className="h-4"
-              width={10}
-              height={40}
+              className="h-8" // Increased height
+              width={40} // Adjust width accordingly
+              height={150}
             />
             <h4 className="pl-2 text-lg font-semibold">Play Store</h4>
           </div>
           <div className="flex items-center">
             <Image
-              width={15}
-              height={70}
+              width={40} // Adjust width accordingly
+              height={40} // Set height for uniformity
               src="/coming/one.png"
               alt="App Store icon"
-              className="h-4"
+              className="h-8" // Increased height
             />
             <h4 className="pl-2 text-lg font-semibold">App Store</h4>
           </div>

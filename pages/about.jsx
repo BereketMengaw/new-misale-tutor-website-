@@ -34,7 +34,9 @@ const AboutUs = () => {
           </section>
 
           <section className="my-5 p-5 bg-white rounded-lg shadow-md w-4/5 max-w-2xl transition-transform duration-300 hover:scale-105">
-            <h2 className="text-2xl mb-3 text-blue-600">Meet Our Team</h2>
+            <h2 className="text-2xl mb-3 text-blue-600 flex justify-center">
+              Meet Our Team
+            </h2>
             <div className="flex justify-around flex-wrap mt-6">
               {teamMembers.map((member, index) => (
                 <div

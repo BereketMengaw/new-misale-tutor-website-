@@ -27,7 +27,6 @@ const Services = () => {
   return (
     <>
       <Navbar />
-
       <div className="max-w-6xl mt-20 mx-auto mb-28 p-5 text-center">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-extrabold text-blue-700 mb-4">

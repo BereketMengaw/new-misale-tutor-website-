@@ -7,7 +7,8 @@ const Card = () => {
     {
       image: "/hero/meeting.jpg",
       title: "Team Meeting",
-      description: "Collaborate with your team effectively.",
+      description:
+        "We emphasize team discussions to build a high-achieving environment..",
     },
     {
       image: "/hero/cardone.png",

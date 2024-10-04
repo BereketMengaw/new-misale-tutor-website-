@@ -17,6 +17,7 @@ const RequestTutor = () => {
     location: "",
     how: "",
     phone: "",
+    additional: "",
   });
 
   // Update form data on input change
@@ -55,9 +56,6 @@ const RequestTutor = () => {
       }
     } catch (error) {
       console.error("Error occurred during submission:", error);
-      alert(
-        "You are successfully submitted your data , we will contact you very soon !"
-      );
     }
     setIsPopupOpen(true); // Show the popup
   };
@@ -69,143 +67,194 @@ const RequestTutor = () => {
 
   return (
     <>
-      <Navbar />
-      <div className="max-w-lg mx-auto p-5 my-24 font-sans text-center border border-gray-300 rounded-lg bg-gray-50 shadow-lg">
-        <h1 className="text-gray-800 text-2xl mb-5 font-bold">
-          Your Personalized Tutoring Journey Starts Here
-        </h1>
-        <p className="text-gray-600 mb-7">
-          Get your child the support they need! Fill in the details below, and
-          we’ll pair you with the best tutors.
-        </p>
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col items-center space-y-4"
-        >
-          <label
-            className="w-full text-left text-gray-700"
-            htmlFor="parentsName"
+      <div className="asking">
+        <Navbar className="mb-0" />
+
+        <div className="max-w-md mx-auto pb-5 my-24 font-sans text-center border border-gray-300 rounded-lg bg-gray-50 shadow-lg">
+          <h1 className="text-blue-950 text-3xl mt-5 mb-4 font-bold shadow-md p-2 rounded-lg transition-transform transform hover:scale-105">
+            Your Personalized Tutoring Journey
+          </h1>
+          <p className="text-gray-600 mb-6 text-sm">
+            Fill in the details below, and we’ll pair you with the best tutors!
+          </p>
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col px-4 md:px-8 space-y-4"
           >
-            Parent's Name
-          </label>
-          <input
-            type="text"
-            id="parentsName"
-            name="parentsName"
-            value={formData.parentsName}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border border-gray-300 rounded-md text-base transition-transform duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 hover:scale-105"
-          />
+            <div className="flex flex-col md:flex-row md:space-x-4">
+              <div className="flex-1">
+                <label
+                  className="block text-left text-blue-950 mb-1 font-semibold transition-colors hover:text-blue-950"
+                  htmlFor="parentsName"
+                >
+                  Parent's Name
+                </label>
+                <input
+                  type="text"
+                  id="parentsName"
+                  name="parentsName"
+                  value={formData.parentsName}
+                  onChange={handleChange}
+                  required
+                  className="w-full p-4 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-950 transition-shadow hover:shadow-lg"
+                />
+              </div>
+              <div className="flex-1">
+                <label
+                  className="block text-left text-blue-950 mb-1 font-semibold transition-colors hover:text-blue-950"
+                  htmlFor="studentName"
+                >
+                  Student's Name
+                </label>
+                <input
+                  type="text"
+                  id="studentName"
+                  name="studentName"
+                  value={formData.studentName}
+                  onChange={handleChange}
+                  required
+                  className="w-full p-4 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-950 transition-shadow hover:shadow-lg"
+                />
+              </div>
+            </div>
 
-          <label
-            className="w-full text-left text-gray-700"
-            htmlFor="studentName"
-          >
-            Student's Name
-          </label>
-          <input
-            type="text"
-            id="studentName"
-            name="studentName"
-            value={formData.studentName}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border border-gray-300 rounded-md text-base transition-transform duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 hover:scale-105"
-          />
+            <div>
+              <label
+                className="block text-left text-blue-950 mb-1 font-semibold transition-colors hover:text-blue-950"
+                htmlFor="gradeLevel"
+              >
+                Grade Level
+              </label>
+              <input
+                type="text"
+                id="gradeLevel"
+                name="gradeLevel"
+                value={formData.gradeLevel}
+                onChange={handleChange}
+                required
+                className="w-full p-4 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-950 transition-shadow hover:shadow-lg"
+              />
+            </div>
 
-          <label
-            className="w-full text-left text-gray-700"
-            htmlFor="gradeLevel"
-          >
-            Grade Level
-          </label>
-          <input
-            type="text"
-            id="gradeLevel"
-            name="gradeLevel"
-            value={formData.gradeLevel}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border border-gray-300 rounded-md text-base transition-transform duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 hover:scale-105"
-          />
+            <div>
+              <label
+                className="block text-left text-blue-950 mb-1 font-semibold transition-colors hover:text-blue-950"
+                htmlFor="school"
+              >
+                School Name
+              </label>
+              <input
+                type="text"
+                id="school"
+                name="school"
+                value={formData.school}
+                onChange={handleChange}
+                required
+                className="w-full p-4 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-950 transition-shadow hover:shadow-lg"
+              />
+            </div>
 
-          <label className="w-full text-left text-gray-700" htmlFor="school">
-            School Name
-          </label>
-          <input
-            type="text"
-            id="school"
-            name="school"
-            value={formData.school}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border border-gray-300 rounded-md text-base transition-transform duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 hover:scale-105"
-          />
+            <div>
+              <label
+                className="block text-left text-blue-950 mb-1 font-semibold transition-colors hover:text-blue-950"
+                htmlFor="location"
+              >
+                Location
+              </label>
+              <input
+                type="text"
+                id="location"
+                name="location"
+                value={formData.location}
+                onChange={handleChange}
+                required
+                className="w-full p-4 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-950 transition-shadow hover:shadow-lg"
+              />
+            </div>
 
-          <label className="w-full text-left text-gray-700" htmlFor="location">
-            Location
-          </label>
-          <input
-            type="text"
-            id="location"
-            name="location"
-            value={formData.location}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border border-gray-300 rounded-md text-base transition-transform duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 hover:scale-105"
-          />
+            <div>
+              <label
+                className="block text-left text-blue-950 mb-1 font-semibold transition-colors hover:text-blue-950"
+                htmlFor="how"
+              >
+                Days per Week
+              </label>
+              <input
+                type="text"
+                id="how"
+                name="how"
+                value={formData.how}
+                onChange={handleChange}
+                required
+                className="w-full p-4 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-950 transition-shadow hover:shadow-lg"
+              />
+            </div>
 
-          <label className="w-full text-left text-gray-700" htmlFor="how">
-            Days per Week
-          </label>
-          <input
-            type="text"
-            id="how"
-            name="how"
-            value={formData.how}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border border-gray-300 rounded-md text-base transition-transform duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 hover:scale-105"
-          />
+            <div>
+              <label
+                className="block text-left text-blue-950 mb-1 font-semibold transition-colors hover:text-blue-950"
+                htmlFor="phone"
+              >
+                Additional Consideration
+              </label>
+              <input
+                type="text"
+                id="additional"
+                name="additional"
+                value={formData.additional}
+                onChange={handleChange}
+                className="w-full p-4 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-950 transition-shadow hover:shadow-lg"
+              />
+            </div>
 
-          <label className="w-full text-left text-gray-700" htmlFor="phone">
-            Phone Number
-          </label>
-          <input
-            type="text"
-            id="phone"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border border-gray-300 rounded-md text-base transition-transform duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 hover:scale-105"
-          />
+            <div>
+              <label
+                className="block text-left text-blue-950 mb-1 font-semibold transition-colors hover:text-blue-950"
+                htmlFor="phone"
+              >
+                Phone Number
+              </label>
+              <input
+                type="text"
+                id="phone"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                className="w-full p-4 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-950 transition-shadow hover:shadow-lg"
+              />
+            </div>
 
-          <button
-            type="submit"
-            className="w-full p-3 mt-5 bg-green-500 text-white rounded-md text-base hover:bg-green-600 transition duration-200 transform hover:scale-105"
-          >
-            Submit
-          </button>
-        </form>
-      </div>
-      {isPopupOpen && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-6 rounded-lg shadow-lg">
-            <h2 className="text-lg font-bold">Submission Successful!</h2>
-            <p className="mt-2">Thank you for submitting your information.</p>
             <button
-              onClick={closePopup}
-              className="mt-4 bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"
+              type="submit"
+              className="w-full p-4 mt-4 bg-blue-950 text-white rounded-md text-base hover:bg-blue-800 transition duration-200"
             >
-              Close
+              Submit
             </button>
-          </div>
+          </form>
         </div>
-      )}
+        {isPopupOpen && (
+          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="bg-white p-6 rounded-lg shadow-lg">
+              <h2 className="text-lg font-bold text-blue-950">
+                Submission Successful!
+              </h2>
+              <p className="mt-2">
+                Thank you for submitting your information. We will contact you
+                very soon!
+              </p>
+              <button
+                onClick={closePopup}
+                className="mt-4 bg-blue-950 text-white px-4 py-2 rounded-md hover:bg-blue-800"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        )}
 
-      <Footer />
+        <Footer />
+      </div>
     </>
   );
 };

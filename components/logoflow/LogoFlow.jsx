@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import Top from "./Top";
+import Image from "next/image";
 
 const logos = [
   "/schoolsLogo/abune.jpg",
@@ -51,7 +51,7 @@ const LogoRiver = () => {
       >
         {logos.concat(logos).map((logo, index) => (
           <div key={index} className="flex-none">
-            <img
+            <Image
               src={logo}
               alt={`Logo ${index + 1}`}
               className="h-10 rounded-3xl opacity-80  hover:scale-110 transition-transform duration-300"

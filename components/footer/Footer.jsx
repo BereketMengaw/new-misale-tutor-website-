@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
@@ -11,7 +12,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          <Image
             src="/logos/facebook.svg"
             className="w-15 h-7 px-3"
             alt="Facebook"
@@ -22,7 +23,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          <Image
             src="/logos/instagram.png"
             className="w-15 h-7 px-3"
             alt="Instagram"
@@ -35,7 +36,7 @@ misale-tutors-b66160331
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          <Image
             src="/logos/linkdin.png"
             className="w-15 h-7 px-3"
             alt="LinkedIn"
@@ -46,21 +47,25 @@ misale-tutors-b66160331
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/logos/telegram.svg" className="w-15 h-6" alt="Telegram" />
+          <Image
+            src="/logos/telegram.svg"
+            className="w-15 h-6"
+            alt="Telegram"
+          />
         </Link>
         <Link
           href="https://x.com/MisaleTutors"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img src="/logos/x.png" className="w-15 h-7 px-3" alt="Twitter" />
+          <Image src="/logos/x.png" className="w-15 h-7 px-3" alt="Twitter" />
         </Link>
         <Link
           href="https://www.youtube.com/@MISALETUTORS"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          <Image
             src="/logos/youtube.svg"
             className="w-15 h-7 px-3"
             alt="YouTube"

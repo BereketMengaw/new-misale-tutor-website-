@@ -80,16 +80,16 @@ const WhyChooseUs = () => {
                     <span className="hidden lg:block">
                       Our tutors have accumulated over a decade of combined
                       teaching experience, focusing on personalized education
-                      that adapts to each student's unique learning style. This
-                      extensive background allows our tutors to implement
+                      that adapts to each student&apos;s unique learning style.
+                      This extensive background allows our tutors to implement
                       effective teaching strategies that not only improve
                       understanding but also foster a love for learning. They
                       are committed to ensuring that every student feels
                       supported and motivated, creating a positive learning
                       environment that encourages academic success. Parents
                       often remark on the transformative impact our tutors have
-                      on their children's confidence and enthusiasm for school,
-                      making education an enjoyable journey.
+                      on their children&apos;s confidence and enthusiasm for
+                      school, making education an enjoyable journey.
                     </span>
                   </>
                 )}
@@ -103,14 +103,15 @@ const WhyChooseUs = () => {
                       We take pride in having developed tailored learning plans
                       for over 1,000 students, each crafted to meet the specific
                       needs and goals of individual learners. This personalized
-                      approach has led to significant improvements in students'
-                      academic performance across various subjects. Our
-                      experienced educators assess each student's strengths and
-                      weaknesses to create a customized roadmap that guides them
-                      through their learning journey. The success stories we
-                      have accumulated over the years highlight the importance
-                      of recognizing that every student learns differently and
-                      requires a unique plan to achieve their best potential.
+                      approach has led to significant improvements in
+                      students&apos; academic performance across various
+                      subjects. Our experienced educators assess each
+                      student&apos;s strengths and weaknesses to create a
+                      customized roadmap that guides them through their learning
+                      journey. The success stories we have accumulated over the
+                      years highlight the importance of recognizing that every
+                      student learns differently and requires a unique plan to
+                      achieve their best potential.
                     </span>
                   </>
                 )}
@@ -164,18 +165,18 @@ const WhyChooseUs = () => {
                       motivation.
                     </span>
                     <span className="hidden lg:block">
-                      We actively engage parents in their children's learning
-                      process, resulting in 80% of parents reporting increased
-                      student engagement and motivation. Our approach encourages
-                      regular communication between tutors and parents, ensuring
-                      that they are informed about their child's progress and
-                      any areas that may require additional support. By
-                      fostering this collaborative relationship, we empower
-                      parents to take an active role in their child's education,
-                      creating a supportive home environment that complements
-                      our tutoring sessions. This holistic approach not only
-                      enhances academic performance but also promotes positive
-                      attitudes toward learning.
+                      We actively engage parents in their children&apos;s
+                      learning process, resulting in 80% of parents reporting
+                      increased student engagement and motivation. Our approach
+                      encourages regular communication between tutors and
+                      parents, ensuring that they are informed about their
+                      child&apos;s progress and any areas that may require
+                      additional support. By fostering this collaborative
+                      relationship, we empower parents to take an active role in
+                      their child&apos;s education, creating a supportive home
+                      environment that complements our tutoring sessions. This
+                      holistic approach not only enhances academic performance
+                      but also promotes positive attitudes toward learning.
                     </span>
                   </>
                 )}

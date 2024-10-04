@@ -23,8 +23,8 @@ const AboutUs = () => {
             <h2 className="text-2xl mb-3 text-blue-600">Our Mission</h2>
             <p className="text-base leading-relaxed text-gray-700 mb-4">
               We strive to provide the best tutoring services tailored to each
-              student's needs. Our goal is to foster a love for learning and to
-              help students achieve their academic goals.
+              student&apos;s needs. Our goal is to foster a love for learning
+              and to help students achieve their academic goals.
             </p>
             <h2 className="text-2xl mb-3 text-blue-600">Our Vision</h2>
             <p className="text-base leading-relaxed text-gray-700 mb-4">

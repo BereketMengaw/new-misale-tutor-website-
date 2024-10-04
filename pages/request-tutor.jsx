@@ -87,7 +87,7 @@ const RequestTutor = () => {
                   className="block text-left text-blue-950 mb-1 font-semibold transition-colors hover:text-blue-950"
                   htmlFor="parentsName"
                 >
-                  Parent's Name
+                  Parent&apos;s Name
                 </label>
                 <input
                   type="text"
@@ -104,7 +104,7 @@ const RequestTutor = () => {
                   className="block text-left text-blue-950 mb-1 font-semibold transition-colors hover:text-blue-950"
                   htmlFor="studentName"
                 >
-                  Student's Name
+                  Student&apos;s Name
                 </label>
                 <input
                   type="text"

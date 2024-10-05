@@ -9,7 +9,7 @@ const RequestTutor = () => {
     <div className="text-center p-5">
       <h1 className="text-4xl font-extrabold mt-10">How to Get a Tutor</h1>
       <div className="mt-2">
-        <hr className="border-t-2 border-blue-500 w-1/6 mx-auto" />/
+        <hr className="border-t-2 border-blue-500 w-1/6 mx-auto" />
       </div>
       <p className="mt-4 text-lg">
         To get personalized tutor recommendations, you can choose one of the

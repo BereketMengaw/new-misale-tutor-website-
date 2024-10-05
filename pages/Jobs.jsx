@@ -36,7 +36,7 @@ function Jobs() {
             academic success.
           </p>
           <Link
-            href="https://forms.gle/cAFJmdFpJwQ3cpW68"
+            href="https://forms.gle/4XwE1xekT2NjaCGb9"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded-lg transition duration-200"
@@ -52,7 +52,7 @@ function Jobs() {
             executing marketing strategies to promote our services.
           </p>
           <Link
-            href="https://forms.gle/9uj59SgbfaG1LUEm6"
+            href="https://forms.gle/Q4cFkZf3uwMAEMeEA"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-2 text-white bg-green-500 hover:bg-green-600 rounded-lg transition duration-200"

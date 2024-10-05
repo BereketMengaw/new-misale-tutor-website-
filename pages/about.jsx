@@ -14,7 +14,7 @@ const AboutUs = () => {
     <>
       <>
         <Navbar />
-        <div className="flex flex-col items-center p-5 mt-16 back font-sans mb-20">
+        <div className="flex flex-col items-center p-5 mt-16 back font-sans lg:mb-0 ">
           <header className="bg-transparent text-white p-5 w-full text-center rounded-lg shadow-md transition-transform duration-300 hover:scale-105">
             <h1 className="text-3xl font-bold">About Us</h1>
           </header>
@@ -37,7 +37,7 @@ const AboutUs = () => {
             <h2 className="text-2xl mb-3 text-blue-600 flex justify-center">
               Meet Our Team
             </h2>
-            <div className="flex justify-around flex-wrap mt-6">
+            <div className=" flex justify-around flex-wrap mt-6">
               {teamMembers.map((member, index) => (
                 <div
                   key={index}
@@ -50,7 +50,6 @@ const AboutUs = () => {
             </div>
           </section>
         </div>
-        <Footer />
       </>
     </>
   );

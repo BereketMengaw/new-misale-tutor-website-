@@ -7,7 +7,7 @@ function Results() {
   const [cards, setCards] = useState([
     {
       title: "Achievement 1",
-      count: "400",
+      count: "100",
       description: "Students enrolled since 2022.",
     },
     {

@@ -10,7 +10,7 @@ const CustomerCounter = ({ targetCount }) => {
 
     const increment = (timestamp) => {
       const elapsed = timestamp - start;
-      const progress = Math.min(elapsed / 10000, 1); // Adjust duration here (e.g., 6000ms)
+      const progress = Math.min(elapsed / 15000, 1); // Adjust duration here (e.g., 6000ms)
       const nextCount = Math.round(progress * targetCount);
       setCount(nextCount);
 

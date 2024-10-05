@@ -24,6 +24,15 @@ const logos = [
   "/schoolsLogo/lebawi.jpg",
   "/schoolsLogo/sot.jpg",
   "/schoolsLogo/zagol.jpg",
+  "/newlogos/one.png",
+  "/newlogos/two.jpg",
+  "/newlogos/three.png",
+  "/newlogos/four.jpeg",
+  "/newlogos/five.png",
+  "/newlogos/six.jpeg",
+  "/newlogos/seven.png",
+  "/newlogos/eight.jpeg",
+  "/newlogos/nine.jpeg",
 ];
 
 const LogoRiver = () => {

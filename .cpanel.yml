@@ -1,3 +1,0 @@
-deployment:
-  type: git
-  branch: main

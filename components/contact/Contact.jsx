@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Contact() {
   return (
-    <div className="contact relative flex flex-col items-center justify-center h-screen w-full overflow-hidden lg:mt-10">
+    <div className="contact relative flex flex-col items-center justify-center h-screen w-full overflow-hidden lg:mt-10 lg:max-h-[600px]">
       <div
         className="absolute inset-0 bg-cover bg-no-repeat bg-right blur-md"
         style={{ backgroundImage: 'url("/result/contactTwo.png")' }}

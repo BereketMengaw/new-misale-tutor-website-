@@ -10,7 +10,7 @@ function Hero() {
       </div>
 
       {/* Main content */}
-      <div className="flex-1 flex flex-col sm:mt-0 justify-center items-center text-center md:text-left md:justify-start p-5 md:p-10 lg:mt-36">
+      <div className="flex-1 flex flex-col sm:mt-0 justify-center items-center text-center md:text-left md:justify-start p-5 md:p-10 lg:mt-36 lg:max-h-[600px]">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-text-gradient mb-4">
           We are Misale Tutors
         </h1>

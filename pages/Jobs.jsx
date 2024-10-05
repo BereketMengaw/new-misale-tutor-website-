@@ -52,7 +52,7 @@ function Jobs() {
             executing marketing strategies to promote our services.
           </p>
           <Link
-            href="https://forms.gle/ZyzRYKtMQcfECbaA8"
+            href="https://forms.gle/MF7QvRQr1CFvieL69"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-6 py-2 text-white bg-green-500 hover:bg-green-600 rounded-lg transition duration-200"

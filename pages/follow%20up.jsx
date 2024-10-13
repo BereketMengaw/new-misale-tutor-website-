@@ -29,7 +29,7 @@ const TutorSignIn = () => {
 
         <div className="flex space-x-4 mb-6">
           <button className="bg-blue-500 text-white rounded-lg px-6 py-3 hover:bg-blue-600 transition shadow-md">
-            <Link href={"https://forms.gle/1eS8V1vkc4sdN5Aw9"} target="_blank">
+            <Link href={"https://forms.gle/S9MuXSy1zV6Mrbyd9"} target="_blank">
               {" "}
               Register Student
             </Link>

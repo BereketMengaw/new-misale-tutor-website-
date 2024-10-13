@@ -13,8 +13,8 @@ const TutorSignIn = () => {
           Welcome, Tutors!
         </h1>
         <p className="text-lg text-gray-700 text-center mb-6">
-          This is the platform where you can check your students' progress. We
-          believe in the power of guidance and support to help our students
+          This is the platform where you can check your students&apos; progress.
+          We believe in the power of guidance and support to help our students
           excel.
         </p>
         <p className="text-lg text-gray-700 text-center mb-6">

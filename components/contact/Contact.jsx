@@ -1,54 +1,67 @@
 import React from "react";
 import Link from "next/link";
+import EmbedMap from "../Map/Map";
 
 function Contact() {
   return (
-    <div className="contact relative flex flex-col items-center justify-center h-screen w-full overflow-hidden lg:mt-10 lg:max-h-[600px]">
-      <div
-        className="absolute inset-0 bg-cover bg-no-repeat bg-right blur-md"
-        style={{ backgroundImage: 'url("/result/contactTwo.png")' }}
-      />
+    <>
+      <div className="contact relative flex flex-col items-center justify-center h-screen w-full overflow-hidden lg:mt-10 lg:max-h-[600px]">
+        <div
+          className="absolute inset-0 bg-cover bg-no-repeat bg-right blur-md"
+          style={{ backgroundImage: 'url("/result/contactTwo.png")' }}
+        />
 
-      <div className="relative z-10 text-white text-center p-6 md:p-8 lg:p-10 rounded-lg shadow-lg bg-white bg-opacity-10 max-w-md mx-auto">
-        <h1 className="text-4xl md:text-5xl text-blue-800 font-bold mb-4 md:mb-6">
-          Contact Us
-        </h1>
-        <p className="text-base md:text-lg mb-6 md:mb-8 text-black">
-          Have a question or need more information? Don&apos;t hesitate to reach
-          out.
-        </p>
+        <div className="relative z-10 text-white text-center p-6 md:p-8 lg:p-10 rounded-lg shadow-lg bg-white bg-opacity-10 max-w-md mx-auto">
+          <h1 className="text-4xl md:text-5xl text-blue-800 font-bold mb-4 md:mb-6">
+            Contact Us
+          </h1>
+          <p className="text-base md:text-lg mb-6 md:mb-8 text-black">
+            Have a question or need more information? Don&apos;t hesitate to
+            reach out.
+          </p>
 
-        <div className="flex flex-col space-y-4">
-          <ContactItem
-            href="mailto:your@email.com"
-            text="Email: misaletutors@gmail.com"
-          />
-          <ContactItem
-            href="tel:+251907152943"
-            text={
-              <span className="font-bold text-black">Call: +251907152943 </span>
-            }
-          />
-          <ContactItem
-            href="https://www.yourwebsite.com"
-            text="Visit Website: misaletutors.com"
-          />
+          <div className="flex flex-col space-y-4">
+            <ContactItem
+              href="mailto:your@email.com"
+              text="Email: misaletutors@gmail.com"
+            />
+            <ContactItem
+              href="tel:+251907152943"
+              text={
+                <span className="font-bold text-black">
+                  Call: +251907152943{" "}
+                </span>
+              }
+            />
+            <ContactItem
+              href="https://www.yourwebsite.com"
+              text="Visit Website: misaletutors.com"
+            />
+          </div>
+
+          <div className="flex  justify-center space-x-4 mt-6">
+            <SocialMediaLink
+              href="https://www.facebook.com/profile.php?id=61565863765699"
+              text="Facebook"
+            />
+            <SocialMediaLink href="https://x.com/MisaleTutors" text="Twitter" />
+            <SocialMediaLink
+              href="https://www.instagram.com"
+              text="Instagram"
+            />
+            <SocialMediaLink
+              href="www.linkedin.com/in/misale-tutors-undefined-b66160331"
+              text="LinkedIn"
+            />
+          </div>
         </div>
-
-        <div className="flex  justify-center space-x-4 mt-6">
-          <SocialMediaLink
-            href="https://www.facebook.com/profile.php?id=61565863765699"
-            text="Facebook"
-          />
-          <SocialMediaLink href="https://x.com/MisaleTutors" text="Twitter" />
-          <SocialMediaLink href="https://www.instagram.com" text="Instagram" />
-          <SocialMediaLink
-            href="www.linkedin.com/in/misale-tutors-undefined-b66160331"
-            text="LinkedIn"
-          />
+        <div className="text-center mt-4 flex flex-col">
+          <span className="text-black">Want to meet us in person?</span>
+          <span className="mr-2">👇</span>
         </div>
       </div>
-    </div>
+      <EmbedMap />
+    </>
   );
 }
 

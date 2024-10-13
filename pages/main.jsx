@@ -8,6 +8,7 @@ import ComingSoon from "@/components/comingSoon/comingsoon";
 import Top from "@/components/logoflow/Top";
 import LogoRiver from "@/components/logoflow/LogoFlow";
 import Contact from "@/components/contact/Contact";
+import EmbedMap from "@/components/Map/Map";
 
 function main() {
   return (
@@ -20,6 +21,7 @@ function main() {
       <ComingSoon />
       <Top />
       <LogoRiver />
+
       <Contact />
     </div>
   );

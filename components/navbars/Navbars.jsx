@@ -58,7 +58,7 @@ const Navbar = () => {
               : "hidden"
           } lg:block lg:mt-0 space-y-4 lg:space-y-0 text-center lg:text-left`}
         >
-          {["/", "/services", "/contact", "/about", "/Jobs"].map(
+          {["/", "/services", "/contact", "/about", "/Jobs", "/follow up"].map(
             (path, index) => (
               <li key={index} className="relative group">
                 <Link href={path} className="mb-1 block">

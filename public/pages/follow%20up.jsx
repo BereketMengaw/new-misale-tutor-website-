@@ -3,8 +3,6 @@ import React from "react";
 import Link from "next/link";
 import "./styles.css";
 import Navbar from "@/components/navbars/Navbars";
-import Weekly from "./Weekly";
-import Footer from "@/components/footer/Footer";
 
 const TutorSignIn = () => {
   return (
@@ -31,10 +29,13 @@ const TutorSignIn = () => {
 
         <div className="flex space-x-4 mb-6">
           <button className="bg-blue-500 text-white rounded-lg px-6 py-3 hover:bg-blue-600 transition shadow-md">
-            <Link href={"register"}> Register Student</Link>
+            <Link href={"https://forms.gle/S9MuXSy1zV6Mrbyd9"} target="_blank">
+              {" "}
+              Register Student
+            </Link>
           </button>
           <button className="bg-blue-500 text-white rounded-lg px-6 py-3 hover:bg-blue-600 transition shadow-md">
-            <Link href={"Weekly"} target="_blank">
+            <Link href={"https://forms.gle/sWbvMqMwopHbuwdcA"} target="_blank">
               weekly report
             </Link>
           </button>
@@ -43,7 +44,6 @@ const TutorSignIn = () => {
           </button>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

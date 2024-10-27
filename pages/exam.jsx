@@ -1,212 +1,252 @@
+// RequestTutor.jsx
+import Footer from "@/components/footer/Footer";
+import Navbar from "@/components/navbars/Navbars";
+import Link from "next/link";
+import GradeReport from "@/components/GradeReport/GradeReport";
 import { useState } from "react";
+import "./styles.css"; // You can remove this if you are not using it
 
-const StudentPerformance = () => {
-  const [selectedGrade, setSelectedGrade] = useState("kg1"); // Default selection
-  const [performanceData, setPerformanceData] = useState({
+const Register = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [formData, setFormData] = useState({
     studentName: "",
-    examType: "Midterm", // Default exam type
+    parentName: "",
+    tutorName: "",
+    schoolName: "",
+    gradeLevel: "",
+    startingDate: "",
     subjects: {},
   });
 
-  const handleGradeChange = (e) => {
-    const grade = e.target.value;
-    setSelectedGrade(grade);
-    // Initialize performance data for the selected grade
-    setPerformanceData({
-      studentName: "",
-      examType: "Midterm", // Reset exam type on grade change
-      subjects: getSubjectsForGrade(grade),
-    });
+  // Update form data on input change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
 
-  const getSubjectsForGrade = (grade) => {
-    switch (grade) {
-      case "kg1":
-      case "kg2":
-      case "kg3":
-        return {
-          Reading: "",
-          Speaking: "",
-          Dancing: "",
-          PhysicalEducation: "",
-        };
-      case "grade1":
-      case "grade2":
-      case "grade3":
-      case "grade4":
-        return {
-          Amharic: "",
-          English: "",
-          Mathematics: "",
-          Science: "",
-          SocialStudies: "",
-          PhysicalEducation: "",
-        };
-      case "grade5":
-      case "grade6":
-      case "grade7":
-      case "grade8":
-        return {
-          Amharic: "",
-          English: "",
-          Mathematics: "",
-          NaturalScience: "", // Includes Biology and Physics
-          SocialStudies: "",
-          PhysicalEducation: "",
-        };
-      case "grade9":
-      case "grade10":
-        return {
-          Amharic: "",
-          English: "",
-          Mathematics: "",
-          Biology: "",
-          Chemistry: "",
-          Physics: "",
-          Geography: "",
-        };
-      case "grade11":
-        return {
-          Physics: "",
-          Chemistry: "",
-          Biology: "",
-          Mathematics: "",
-          English: "",
-          Geography: "",
-        };
-      case "grade12":
-        return {
-          Sociology: "",
-          History: "",
-          Geography: "",
-          Economics: "",
-          Amharic: "",
-          English: "",
-        };
-      default:
-        return {};
-    }
+  // Handle grade level change
+  const handleGradeLevelChange = (e) => {
+    const selectedGradeLevel = e.target.value;
+    setFormData({ ...formData, gradeLevel: selectedGradeLevel, subjects: {} });
   };
 
-  const handleInputChange = (subject, value) => {
-    setPerformanceData((prevData) => ({
-      ...prevData,
-      subjects: {
-        ...prevData.subjects,
-        [subject]: value,
-      },
-    }));
-  };
-
-  const handleExamTypeChange = (e) => {
-    setPerformanceData((prevData) => ({
-      ...prevData,
-      examType: e.target.value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitted Data:", performanceData);
-    // Here you would typically send this data to your backend/API for processing
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbzQhz0jcLiQK0vW298q5Afg9x7N1Krq4etiYVB1ywmndsTqKqiBNWCDK7MImZG8es9thQ/exec",
+        {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          mode: "cors",
+          body: JSON.stringify(formData),
+          credentials: "include",
+        }
+      );
+
+      const result = await response.json(); // Parse the JSON response
+
+      if (result.success) {
+        setIsPopupOpen(true); // Show success message
+      } else {
+        console.error("Submission failed:", result.message); // Handle error
+      }
+    } catch (error) {
+      console.error("Error occurred during submission:", error); // Handle fetch error
+    }
+    setIsPopupOpen(true);
   };
+
+  const closePopup = () => setIsPopupOpen(false);
 
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-lg">
-      <h1 className="text-3xl font-bold mb-4 text-center">
-        Student Performance Submission
-      </h1>
+    <div className="request-tutor min-h-screen flex flex-col mt-10">
+      <Navbar />
+      <div className="flex-grow flex items-center justify-center py-8">
+        <div className="bg-white rounded-lg shadow-lg p-6 max-w-md w-full">
+          <h1 className="text-2xl font-semibold mb-4 text-center">
+            Exam result of your student
+          </h1>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label
+                htmlFor="studentName"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Student&apos;s Name
+              </label>
+              <input
+                type="text"
+                name="studentName"
+                value={formData.studentName}
+                onChange={handleChange}
+                required
+                className="mt-1 w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300"
+              />
+            </div>
 
-      <form onSubmit={handleSubmit}>
-        <div className="mb-6">
-          <label htmlFor="studentName" className="block mb-2 font-semibold">
-            Student Name:
-          </label>
-          <input
-            type="text"
-            id="studentName"
-            value={performanceData.studentName}
-            onChange={(e) =>
-              setPerformanceData({
-                ...performanceData,
-                studentName: e.target.value,
-              })
-            }
-            className="block w-full p-2 border border-gray-300 rounded-lg"
-            required
-          />
-        </div>
+            <div>
+              <label
+                htmlFor="tutorName"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Tutor&apos;s Name
+              </label>
+              <input
+                type="text"
+                name="tutorName"
+                value={formData.tutorName}
+                onChange={handleChange}
+                required
+                className="mt-1 w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300"
+              />
+            </div>
 
-        <div className="mb-6">
-          <label htmlFor="examType" className="block mb-2 font-semibold">
-            Exam Type:
-          </label>
-          <select
-            id="examType"
-            value={performanceData.examType}
-            onChange={handleExamTypeChange}
-            className="block w-full p-2 border border-gray-300 rounded-lg"
-          >
-            <option value="Midterm">Midterm</option>
-            <option value="Final">Final</option>
-            <option value="Quiz">Quiz</option>
-            <option value="Assignment">Assignment</option>
-          </select>
-        </div>
+            <div>
+              <label
+                htmlFor="schoolName"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Student School Name
+              </label>
+              <input
+                type="text"
+                name="schoolName"
+                value={formData.schoolName}
+                onChange={handleChange}
+                required
+                className="mt-1 w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300"
+              />
+            </div>
 
-        <div className="mb-6">
-          <label htmlFor="grade" className="block mb-2 font-semibold">
-            Select Grade Level:
-          </label>
-          <select
-            id="grade"
-            value={selectedGrade}
-            onChange={handleGradeChange}
-            className="block w-full p-2 border border-gray-300 rounded-lg"
-          >
-            <option value="kg1">KG 1</option>
-            <option value="kg2">KG 2</option>
-            <option value="kg3">KG 3</option>
-            <option value="grade1">Grade 1</option>
-            <option value="grade2">Grade 2</option>
-            <option value="grade3">Grade 3</option>
-            <option value="grade4">Grade 4</option>
-            <option value="grade5">Grade 5</option>
-            <option value="grade6">Grade 6</option>
-            <option value="grade7">Grade 7</option>
-            <option value="grade8">Grade 8</option>
-            <option value="grade9">Grade 9</option>
-            <option value="grade10">Grade 10</option>
-            <option value="grade11">Grade 11</option>
-            <option value="grade12">Grade 12</option>
-          </select>
-        </div>
+            <div>
+              <label
+                htmlFor="gradeLevel"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Grade Level
+              </label>
+              <select
+                name="gradeLevel"
+                value={formData.gradeLevel}
+                onChange={handleGradeLevelChange}
+                required
+                className="mt-1 w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300"
+              >
+                <option value="">Select Grade Level</option>
+                <option value="KG">KG (1-3)</option>
+                <option value="1">Grade 1</option>
+                <option value="2">Grade 2</option>
+                <option value="3">Grade 3</option>
+                <option value="4">Grade 4</option>
+                <option value="5">Grade 5</option>
+                <option value="6">Grade 6</option>
+                <option value="7">Grade 7</option>
+                <option value="8">Grade 8</option>
+                <option value="9">Grade 9</option>
+                <option value="10">Grade 10</option>
+                <option value="11-Natural">Grade 11 Natural</option>
+                <option value="11-Social">Grade 11 Social</option>
+                <option value="12-Natural">Grade 12 Natural</option>
+                <option value="12-Social">Grade 12 Social</option>
+              </select>
+            </div>
 
-        {Object.keys(performanceData.subjects).map((subject) => (
-          <div key={subject} className="mb-4">
-            <label htmlFor={subject} className="block mb-2 font-semibold">
-              {subject} Score:
-            </label>
-            <input
-              type="text"
-              id={subject}
-              value={performanceData.subjects[subject]}
-              onChange={(e) => handleInputChange(subject, e.target.value)}
-              className="block w-full p-2 border border-gray-300 rounded-lg"
-              required
+            <div>
+              <label
+                htmlFor="parentName"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Exam value(10%,15%,20%,30%,40%)
+              </label>
+              <input
+                type="text"
+                name="parentName"
+                value={formData.parentName}
+                onChange={handleChange}
+                required
+                className="mt-1 w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300"
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor="startingDate"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Exam result submition date
+              </label>
+              <input
+                type="date"
+                name="startingDate"
+                value={formData.startingDate}
+                onChange={handleChange}
+                required
+                className="mt-1 w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300"
+              />
+            </div>
+
+            {/* Render the GradeReport component */}
+            <GradeReport
+              gradeLevel={formData.gradeLevel}
+              subjects={formData.subjects}
+              setFormData={setFormData}
             />
-          </div>
-        ))}
 
-        <button
-          type="submit"
-          className="w-full p-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700"
-        >
-          Submit Performance Data
+            <button
+              type="submit"
+              className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-200"
+            >
+              Submit
+            </button>
+          </form>
+
+          {isPopupOpen && (
+            <div className="popup mt-4 p-4 bg-green-100 text-green-800 rounded border border-green-400">
+              <p>Submission Successful! We’ll contact you soon.</p>
+              <button
+                onClick={closePopup}
+                className="mt-2 text-blue-500 hover:underline"
+              >
+                Close
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+      <div className="flex justify-center space-x-4 mb-6">
+        <button className="bg-blue-500 text-white rounded-lg px-6 py-3 hover:bg-blue-600 transition shadow-md">
+          <Link href={"register"}> Register Student</Link>
         </button>
-      </form>
+        <button className="bg-blue-500 text-white rounded-lg px-6 py-3 hover:bg-blue-600 transition shadow-md">
+          <Link href={"Weekly"} target="_blank">
+            weekly report
+          </Link>
+        </button>
+        <button className="bg-green-500 text-white rounded-lg px-6 py-3 hover:bg-green-600 transition shadow-md">
+          <Link href={"/exam"}>exam results</Link>
+        </button>
+      </div>
+      {isPopupOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h2 className="text-lg font-bold text-blue-950">
+              Submission Successful!
+            </h2>
+            <p className="mt-2">Result report completed!</p>
+            <button
+              onClick={closePopup}
+              className="mt-4 bg-blue-950 text-white px-4 py-2 rounded-md hover:bg-blue-800"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
+      <Footer />
     </div>
   );
 };
 
-export default StudentPerformance;
+export default Register;

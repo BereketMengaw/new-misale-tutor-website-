@@ -7,8 +7,10 @@ const subjectsByGrade = {
     "Social Interaction",
     "Play-Based Learning",
     "Basic Math",
-    "Motor Skills",
     "Amharic Language Development",
+    "Maths",
+    "English",
+    "Science ",
   ],
   1: ["Amharic", "English", "Math", "Science"],
   2: ["Amharic", "English", "Math", "Science"],
@@ -111,7 +113,6 @@ const GradeReport = ({ gradeLevel, subjects, setFormData }) => {
 
   return (
     <div className="subject-selection space-y-2">
-      <h2 className="text-xl font-semibold">Subject Last Semister Grade</h2>
       {selectedSubjects &&
         selectedSubjects.map((subject, index) => (
           <div key={index} className="flex flex-col">

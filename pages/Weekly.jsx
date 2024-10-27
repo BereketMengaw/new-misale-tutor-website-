@@ -71,7 +71,7 @@ const Register = () => {
                 htmlFor="studentName"
                 className="block text-sm font-medium text-gray-700"
               >
-                Student's Name
+                Student&apos;s Name
               </label>
               <input
                 type="text"
@@ -88,7 +88,7 @@ const Register = () => {
                 htmlFor="tutorName"
                 className="block text-sm font-medium text-gray-700"
               >
-                Tutor's Name
+                Tutor&apos;s Name
               </label>
               <input
                 type="text"

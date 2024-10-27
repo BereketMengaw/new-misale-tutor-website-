@@ -1,6 +1,7 @@
 // RequestTutor.jsx
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbars/Navbars";
+import Link from "next/link";
 import GradeReport from "@/components/GradeReport/GradeReport";
 import { useState } from "react";
 import "./styles.css"; // You can remove this if you are not using it
@@ -213,6 +214,19 @@ const Register = () => {
           )}
         </div>
       </div>
+      <div className="flex justify-center space-x-4 mb-6">
+        <button className="bg-blue-500 text-white rounded-lg px-6 py-3 hover:bg-blue-600 transition shadow-md">
+          <Link href={"register"}> Register Student</Link>
+        </button>
+        <button className="bg-blue-500 text-white rounded-lg px-6 py-3 hover:bg-blue-600 transition shadow-md">
+          <Link href={"Weekly"} target="_blank">
+            weekly report
+          </Link>
+        </button>
+        <button className="bg-green-500 text-white rounded-lg px-6 py-3 hover:bg-green-600 transition shadow-md">
+          <Link href={"/exam"}>exam results</Link>
+        </button>
+      </div>
       {isPopupOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
           <div className="bg-white p-6 rounded-lg shadow-lg">
@@ -232,6 +246,7 @@ const Register = () => {
           </div>
         </div>
       )}
+
       <Footer />
     </div>
   );

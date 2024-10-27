@@ -1,194 +1,232 @@
-import React, { useState } from "react";
-import Navbar from "@/components/navbars/Navbars";
-import "./styles.css";
+import Link from "next/link";
 import Footer from "@/components/footer/Footer";
+import Navbar from "@/components/navbars/Navbars";
+import DaysReport from "@/components/DaysReport/DaysReport";
+import { useState } from "react";
+import "./styles.css"; // You can remove this if you are not using it
 
-function WeeklyReport() {
+const Register = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [formData, setFormData] = useState({
-    week: "",
     studentName: "",
     tutorName: "",
-    tutor_days: {
-      Monday: false,
-      Tuesday: false,
-      Wednesday: false,
-      Thursday: false,
-      Friday: false,
-      Saturday: false,
-      Sunday: false,
-    },
-    comments: "",
+    weekNumber: "",
+    gradeLevel: "",
+    subjects: {},
+    comments: "", // Add comments to the formData state
   });
-  const [formStatus, setFormStatus] = useState(null);
 
+  // Update form data on input change
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    if (name in formData.tutor_days) {
-      setFormData((prev) => ({
-        ...prev,
-        tutor_days: {
-          ...prev.tutor_days,
-          [name]: checked,
-        },
-      }));
-    } else {
-      setFormData((prev) => ({
-        ...prev,
-        [name]: value,
-      }));
-    }
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // Handle grade level change
+  const handleGradeLevelChange = (e) => {
+    const selectedGradeLevel = e.target.value;
+    setFormData({ ...formData, gradeLevel: selectedGradeLevel, subjects: {} });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Create a simplified data object with only checked days
-    const dataToSubmit = {
-      ...formData,
-      tutor_days: Object.keys(formData.tutor_days).filter(
-        (day) => formData.tutor_days[day]
-      ),
-    };
-
     try {
       const response = await fetch(
-        "https://script.google.com/macros/s/AKfycby2TJBG0iY6zLiBI4oWnVSzqFMDnOBSnzMMNKswPThizLCUX9jvsjIISqnBzLkoRplf/exec",
+        "https://script.google.com/macros/s/AKfycbwPIAwV6mBjxSbYryYIV9i-7nkrhRB0crcwowurstJyo3KSVaKr1EPzFrbghpsZ9kKu/exec",
         {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(dataToSubmit),
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          mode: "cors",
+          body: JSON.stringify(formData),
+          credentials: "include",
         }
       );
 
-      const result = await response.json();
+      const result = await response.json(); // Parse the JSON response
+
       if (result.success) {
-        setFormStatus("Report submitted successfully!");
+        setIsPopupOpen(true); // Show success message
       } else {
-        setFormStatus("Failed to submit report.");
+        console.error("Submission failed:", result.message); // Handle error
       }
     } catch (error) {
-      setFormStatus("Error occurred during submission.");
+      console.error("Error occurred during submission:", error); // Handle fetch error
     }
+    setIsPopupOpen(true);
   };
 
+  const closePopup = () => setIsPopupOpen(false);
+
   return (
-    <>
+    <div className="request-tutor min-h-screen flex flex-col mt-10">
       <Navbar />
-      <div className="max-w-2xl mx-auto p-6 bg-white shadow-md rounded-lg mt-14">
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <h3 className="text-2xl font-bold text-gray-700">
-            Weekly Student Engagement Report
-          </h3>
-
-          <div>
-            <label
-              htmlFor="week"
-              className="block text-lg font-semibold text-gray-600"
-            >
-              Select the week:
-            </label>
-            <input
-              type="week"
-              id="week"
-              name="week"
-              required
-              value={formData.week}
-              onChange={handleChange}
-              className="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
-            />
-          </div>
-
-          <div>
-            <label
-              htmlFor="studentName"
-              className="block text-lg font-semibold text-gray-600"
-            >
-              Student Name:
-            </label>
-            <input
-              type="text"
-              id="studentName"
-              name="studentName"
-              required
-              value={formData.studentName}
-              onChange={handleChange}
-              className="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
-            />
-          </div>
-
-          <div>
-            <label
-              htmlFor="tutorName"
-              className="block text-lg font-semibold text-gray-600"
-            >
-              Tutor Name:
-            </label>
-            <input
-              type="text"
-              id="tutorName"
-              name="tutorName"
-              required
-              value={formData.tutorName}
-              onChange={handleChange}
-              className="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
-            />
-          </div>
-
-          <div>
-            <label className="block text-lg font-semibold text-gray-600">
-              Which days did you tutor this week?
-            </label>
-            <div className="mt-2 space-y-2">
-              {Object.keys(formData.tutor_days).map((day) => (
-                <div key={day}>
-                  <input
-                    type="checkbox"
-                    id={day}
-                    name={day}
-                    checked={formData.tutor_days[day]}
-                    onChange={handleChange}
-                    className="mr-2"
-                  />
-                  <label htmlFor={day} className="text-gray-700">
-                    {day}
-                  </label>
-                </div>
-              ))}
+      <div className="flex-grow flex items-center justify-center py-8">
+        <div className="bg-white rounded-lg shadow-lg p-6 max-w-md w-full">
+          <h1 className="text-2xl font-semibold mb-4 text-center">
+            Weekly Report
+          </h1>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <label
+                htmlFor="studentName"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Student's Name
+              </label>
+              <input
+                type="text"
+                name="studentName"
+                value={formData.studentName}
+                onChange={handleChange}
+                required
+                className="mt-1 w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300"
+              />
             </div>
-          </div>
 
-          <div>
-            <label
-              htmlFor="comments"
-              className="block text-lg font-semibold text-gray-600"
-            >
-              Additional comments or concerns:
-            </label>
-            <textarea
-              id="comments"
-              name="comments"
-              rows="4"
-              value={formData.comments}
-              onChange={handleChange}
-              className="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
-              placeholder="Enter any additional comments"
+            <div>
+              <label
+                htmlFor="tutorName"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Tutor's Name
+              </label>
+              <input
+                type="text"
+                name="tutorName"
+                value={formData.tutorName}
+                onChange={handleChange}
+                required
+                className="mt-1 w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300"
+              />
+            </div>
+
+            <div>
+              <label
+                htmlFor=""
+                className="block text-sm font-medium text-gray-700"
+              >
+                Week Number
+              </label>
+              <select
+                name="weekNumber"
+                value={formData.weekNumber}
+                onChange={handleChange}
+                required
+                className="mt-1 w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300"
+              >
+                <option value="">Select Week</option>
+                <option value="1">Week 1</option>
+                <option value="2">Week 2</option>
+                <option value="3">Week 3</option>
+                <option value="4">Week 4</option>
+              </select>
+            </div>
+
+            <div>
+              <label
+                htmlFor=""
+                className="block text-sm font-medium text-gray-700"
+              >
+                How many days a week have you tutored?
+              </label>
+              <select
+                name="gradeLevel"
+                value={formData.gradeLevel}
+                onChange={handleGradeLevelChange}
+                required
+                className="mt-1 w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300"
+              >
+                <option value="">Choose below</option>
+                <option value="1">One day</option>
+                <option value="2">Two days</option>
+                <option value="3">Three days</option>
+                <option value="4">Four days</option>
+                <option value="5">Five days</option>
+                <option value="6">Six days</option>
+                <option value="7">Seven days</option>
+              </select>
+            </div>
+
+            {/* Render the daysReport component */}
+            <DaysReport
+              gradeLevel={formData.gradeLevel}
+              subjects={formData.subjects}
+              setFormData={setFormData}
             />
-          </div>
 
-          <div>
+            {/* New comments input field */}
+            <div>
+              <label
+                htmlFor="comments"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Additional Comments or Information
+              </label>
+              <textarea
+                name="comments"
+                value={formData.comments}
+                onChange={handleChange}
+                className="mt-1 w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300"
+                rows="3"
+                placeholder="Optional"
+              />
+            </div>
+
             <button
               type="submit"
-              className="w-full bg-blue-500 text-white font-semibold p-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-200"
             >
-              Submit Weekly Report
+              Submit
+            </button>
+          </form>
+
+          {isPopupOpen && (
+            <div className="popup mt-4 p-4 bg-green-100 text-green-800 rounded border border-green-400">
+              <p>Submission Successful! We’ll contact you soon.</p>
+              <button
+                onClick={closePopup}
+                className="mt-2 text-blue-500 hover:underline"
+              >
+                Close
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+      <div className="flex justify-center space-x-4 mb-6">
+        <button className="bg-blue-500 text-white rounded-lg px-6 py-3 hover:bg-blue-600 transition shadow-md">
+          <Link href={"register"}> Register Student</Link>
+        </button>
+        <button className="bg-blue-500 text-white rounded-lg px-6 py-3 hover:bg-blue-600 transition shadow-md">
+          <Link href={"Weekly"} target="_blank">
+            weekly report
+          </Link>
+        </button>
+        <button className="bg-green-500 text-white rounded-lg px-6 py-3 hover:bg-green-600 transition shadow-md">
+          <Link href={"/exam"}>exam results</Link>
+        </button>
+      </div>
+      {isPopupOpen && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg">
+            <h2 className="text-lg font-bold text-blue-950">
+              Submission Successful!
+            </h2>
+            <p className="mt-2">
+              You have successfully completed the weekly report!
+            </p>
+            <button
+              onClick={closePopup}
+              className="mt-4 bg-blue-950 text-white px-4 py-2 rounded-md hover:bg-blue-800"
+            >
+              Close
             </button>
           </div>
-          {formStatus && <p className="mt-4 text-center">{formStatus}</p>}
-        </form>
-      </div>
+        </div>
+      )}
       <Footer />
-    </>
+    </div>
   );
-}
+};
 
-export default WeeklyReport;
+export default Register;

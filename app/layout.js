@@ -1,6 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/footer/Footer";
+import Head from "next/head";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -14,9 +15,12 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "Misale Tutors ",
+  title: "Misale Tutors",
   description:
-    "Best tutor service in addis ababa , providing home tutor,online tutor service and educational consulting ",
+    "Best tutor service in Addis Ababa, providing home tutor, online tutor services, and educational consulting",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -135,7 +135,7 @@ const Register = () => {
                 className="mt-1 w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-blue-300"
               />
             </div>
-
+            <h1>Last Semester/Year Information </h1>
             <div>
               <label
                 htmlFor="gradeLevel"

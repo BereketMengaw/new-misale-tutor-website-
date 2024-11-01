@@ -34,9 +34,7 @@ const TutorSignIn = () => {
             <Link href={"register"}> Register Student</Link>
           </button>
           <button className="bg-blue-500 text-white rounded-lg px-6 py-3 hover:bg-blue-600 transition shadow-md">
-            <Link href={"Weekly"} target="_blank">
-              weekly report
-            </Link>
+            <Link href={"Weekly"}>weekly report</Link>
           </button>
           <button className="bg-green-500 text-white rounded-lg px-6 py-3 hover:bg-green-600 transition shadow-md">
             <Link href={"/exam"}>exam results</Link>

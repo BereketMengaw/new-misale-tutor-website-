@@ -49,10 +49,10 @@ const Register = () => {
       if (result.success) {
         setIsPopupOpen(true); // Show success message
       } else {
-        console.error("Submission failed:", result.message); // Handle error
+        setIsPopupOpen(true);
       }
     } catch (error) {
-      console.error("Error occurred during submission:", error); // Handle fetch error
+      setIsPopupOpen(true);
     }
     setIsPopupOpen(true);
   };
